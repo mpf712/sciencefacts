@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Fact Generator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 500px;
+            text-align: center;
+        }
+        .category {
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            color: #0078D4;
+            letter-spacing: 1px;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .fact-text {
+            font-size: 1.25rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+        button {
+            background-color: #0078D4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #005A9E;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="category" id="category">Loading...</div>
+        <div class="fact-text" id="fact">Fetching a random fact...</div>
+        <button onclick="displayRandomFact()">Get Another Fact</button>
+    </div>
+
+    <script>
+        let factsArray = [];
+
+        // Fetch the CSV file and parse it
+        async function loadFacts() {
+            try {
+                const response = await fetch('facts.csv');
+                const data = await response.text();
+                
+                // Split the CSV by new lines and remove empty rows
+                const rows = data.split('\n').filter(row => row.trim() !== '');
+                
+                // Skip the header row (index 0) and parse the rest
+                factsArray = rows.slice(1).map(row => {
+                    // Split by the first comma to separate Category and Fact
+                    const [category, ...factParts] = row.split(',');
+                    return {
+                        category: category.trim(),
+                        fact: factParts.join(',').trim() // Rejoin in case the fact text had commas
+                    };
+                });
+
+                displayRandomFact();
+            } catch (error) {
+                document.getElementById('fact').innerText = "Error loading facts. Make sure you are running a local server.";
+                console.error("Error loading CSV:", error);
+            }
+        }
+
+        // Pick a random fact from the array and display it
+        function displayRandomFact() {
+            if (factsArray.length === 0) return;
+            
+            const randomIndex = Math.floor(Math.random() * factsArray.length);
+            const randomFact = factsArray[randomIndex];
+            
+            document.getElementById('category').innerText = randomFact.category;
+            document.getElementById('fact').innerText = randomFact.fact;
+        }
+
+        // Load facts when the page loads
+        window.onload = loadFacts;
+    </script>
+</body>
+</html>
