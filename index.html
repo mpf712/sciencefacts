@@ -3,103 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Fact Generator</title>
+    <title>Galactic Fact Generator</title>
+    <!-- Importing a futuristic Space font from Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Space Grotesk', sans-serif;
+            /* Deep space background image from Unsplash */
+            background: url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=2048&auto=format&fit=crop') no-repeat center center fixed;
+            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            color: #ffffff;
         }
+        
+        /* Glassmorphism Container */
         .container {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            max-width: 500px;
+            background: rgba(10, 15, 30, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 243, 255, 0.1);
+            max-width: 550px;
+            width: 90%;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
+
+        /* Subtle glowing top border inside the container */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00f3ff, transparent);
+        }
+
         .category {
             text-transform: uppercase;
-            font-size: 0.85rem;
-            color: #0078D4;
-            letter-spacing: 1px;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #00f3ff;
+            letter-spacing: 3px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 8px rgba(0, 243, 255, 0.6);
         }
+
         .fact-text {
-            font-size: 1.25rem;
-            color: #333;
-            margin-bottom: 1.5rem;
-            line-height: 1.5;
+            font-size: 1.4rem;
+            color: #e2e8f0;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            min-height: 80px; /* Prevents button from jumping too much */
         }
+
+        /* Neon Button */
         button {
-            background-color: #0078D4;
-            color: white;
-            border: none;
-            padding: 10px 20px;
+            background-color: transparent;
+            color: #00f3ff;
+            border: 2px solid #00f3ff;
+            padding: 12px 28px;
             font-size: 1rem;
-            border-radius: 6px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background 0.3s;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.2), inset 0 0 10px rgba(0, 243, 255, 0.1);
         }
+
         button:hover {
-            background-color: #005A9E;
+            background-color: #00f3ff;
+            color: #050b14;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.6), inset 0 0 15px rgba(0, 243, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="category" id="category">Loading...</div>
-        <div class="fact-text" id="fact">Fetching a random fact...</div>
-        <button onclick="displayRandomFact()">Get Another Fact</button>
+        <div class="category" id="category">Establishing Link...</div>
+        <div class="fact-text" id="fact">Scanning database for anomalies...</div>
+        <button onclick="displayRandomFact()">Initialize New Fact</button>
     </div>
 
     <script>
         let factsArray = [];
 
-        // Fetch the CSV file and parse it
         async function loadFacts() {
             try {
                 const response = await fetch('facts.csv');
                 const data = await response.text();
                 
-                // Split the CSV by new lines and remove empty rows
                 const rows = data.split('\n').filter(row => row.trim() !== '');
                 
-                // Skip the header row (index 0) and parse the rest
                 factsArray = rows.slice(1).map(row => {
-                    // Split by the first comma to separate Category and Fact
                     const [category, ...factParts] = row.split(',');
                     return {
                         category: category.trim(),
-                        fact: factParts.join(',').trim() // Rejoin in case the fact text had commas
+                        fact: factParts.join(',').trim()
                     };
                 });
 
                 displayRandomFact();
             } catch (error) {
-                document.getElementById('fact').innerText = "Error loading facts. Make sure you are running a local server.";
+                document.getElementById('fact').innerText = "Connection lost. Please ensure you are running a local server.";
                 console.error("Error loading CSV:", error);
             }
         }
 
-        // Pick a random fact from the array and display it
         function displayRandomFact() {
             if (factsArray.length === 0) return;
             
             const randomIndex = Math.floor(Math.random() * factsArray.length);
             const randomFact = factsArray[randomIndex];
             
-            document.getElementById('category').innerText = randomFact.category;
-            document.getElementById('fact').innerText = randomFact.fact;
+            // Adding a tiny fade-out/fade-in effect for extra polish
+            const factEl = document.getElementById('fact');
+            const categoryEl = document.getElementById('category');
+            
+            factEl.style.opacity = 0;
+            categoryEl.style.opacity = 0;
+            
+            setTimeout(() => {
+                categoryEl.innerText = randomFact.category;
+                factEl.innerText = randomFact.fact;
+                
+                factEl.style.transition = "opacity 0.5s ease";
+                categoryEl.style.transition = "opacity 0.5s ease";
+                factEl.style.opacity = 1;
+                categoryEl.style.opacity = 1;
+            }, 200); // 200ms delay to match the fade out
         }
 
-        // Load facts when the page loads
         window.onload = loadFacts;
     </script>
 </body>
