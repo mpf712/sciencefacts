@@ -5,3 +5,57 @@ Science,A typical cumulus cloud can weigh more than a million pounds.
 Math,The word "mathematics" only appears in one Shakespearean play: The Taming of the Shrew.
 Science,Helium changes our voices because its density is much lower than that of air.
 Math,A 'jiffy' is an actual unit of time. It means 1/100th of a second.
+Math,Algebra is a branch of mathematics where symbols and letters (called variables) are used to represent unknown numbers in equations and formulas
+Math,Zero is the only number that cannot be represented by Roman numerals.
+Science,Venus is the only planet to spin clockwise.
+Science,A typical cumulus cloud can weigh more than a million pounds.
+Math,The word "mathematics" only appears in one Shakespearean play: The Taming of the Shrew.
+Science,Helium changes our voices because its density is much lower than that of air.
+Math,A 'jiffy' is an actual unit of time. It means 1/100th of a second.
+Algebra,"Euler's Identity (e^(iπ) + 1 = 0) is often called the most beautiful equation in mathematics because it connects five fundamental constants: e, i, π, 1, and 0."
+Geometry,"A Gabriel's Horn is a geometric figure that has finite volume but infinite surface area, meaning it could hold a finite amount of paint but could never be painted on the outside."
+Trigonometry,"The word 'sine' comes from a mistranslation of the Arabic word 'jiba' (meaning chord) into the Latin word 'sinus' (meaning bay or fold) by Gerard of Cremona in the 12th century."
+Calculus,"Isaac Newton and Gottfried Wilhelm Leibniz independently developed calculus in the 17th century, leading to a bitter priority dispute that divided the mathematical community for a century."
+Advanced Math,"The Banach-Tarski paradox states that a solid 3D ball can be divided into a finite number of non-overlapping pieces, which can then be reassembled into two identical copies of the original ball."
+Graph Theory,"The Seven Bridges of Königsberg problem, solved by Leonhard Euler in 1736, laid the foundation for graph theory and topology by proving it was impossible to cross all seven bridges exactly once."
+Physics,"The Standard Model of particle physics describes three of the four known fundamental forces (electromagnetic, weak, and strong interactions), but it completely leaves out gravity."
+Electrodynamics,"James Clerk Maxwell united electricity and magnetism into a single force with his four Maxwell's Equations, proving that light itself is an electromagnetic wave."
+Quantum Mechanics,"Heisenberg's Uncertainty Principle (Δx * Δp ≥ h/4π) states that the more precisely you know a particle's position, the less precisely you can know its momentum."
+Statistical Mechanics,"Ludwig Boltzmann pioneered statistical mechanics, providing a microscopic explanation for entropy (S = k_B * lnW). Tragically, his ideas were widely rejected during his lifetime."
+Thermodynamics,"The Second Law of Thermodynamics dictates that the total entropy of an isolated system can never decrease over time, which gives time its unidirectional 'arrow'."
+Orbital Mechanics,"The Hohmann transfer orbit is the most energy-efficient maneuver to move a spacecraft between two circular orbits using two engine impulses."
+Classical Mechanics,"Noether's Theorem, developed by Emmy Noether in 1915, proves that every differentiable symmetry of the action of a physical system has a corresponding conservation law (e.g., time symmetry equals energy conservation)."
+Computer Science,"The Halting Problem, proven mathematically by Alan Turing in 1936, demonstrates that it is impossible to create a general algorithm that can determine if any given program will eventually stop running."
+Astrophysics,"Chandrasekhar's limit (approximately 1.4 solar masses) is the maximum mass of a stable white dwarf star. Above this limit, it will collapse into a neutron star or black hole."
+Biology,"The human genome contains about 3 billion base pairs, yet human DNA is 99.9% identical from person to person. The remaining 0.1% accounts for all our genetic differences."
+Chemistry,"Dmitri Mendeleev left gaps in his original 1869 periodic table, correctly predicting the existence and properties of undiscovered elements like gallium and germanium."
+Philosophy,"René Descartes' famous proposition 'Cogito, ergo sum' (I think, therefore I am) was his foundational element for knowledge in the face of radical doubt."
+World History,"The Library of Alexandria was not destroyed in a single massive fire, but rather declined gradually over centuries due to lack of funding, bureaucratic neglect, and multiple smaller conflicts."
+Religion,"The concept of 'Zero' as a number was first fully developed in India around the 5th century AD, heavily influenced by the Hindu and Buddhist philosophical concepts of 'Sunyata' (emptiness)."
+Neuroscience,"The human brain contains approximately 86 billion neurons, and a single neuron can have up to 10,000 synaptic connections to other neurons."
+Quantum Computing,"Shor's Algorithm can factor large prime numbers exponentially faster than the best-known classical algorithms, posing a theoretical threat to modern RSA encryption."
+Quantum Electrodynamics,"Richard Feynman developed Feynman diagrams to visually represent the mathematical expressions governing the behavior of subatomic particles in quantum electrodynamics."
+General Relativity,"Einstein's Field Equations (G_μν + Λg_μν = 8πG/c^4 * T_μν) describe gravity not as a force, but as the curvature of spacetime caused by mass and energy."
+Special Relativity,"Time dilation, a consequence of Special Relativity, means that clocks moving at high speeds tick slower compared to clocks at rest. This effect must be accounted for in GPS satellites."
+AI,"The Dartmouth Workshop of 1956 is widely considered the founding event of Artificial Intelligence as a distinct field of research, organized by John McCarthy."
+AI Ethics,"The 'Alignment Problem' refers to the challenge of ensuring that an artificial general intelligence (AGI) system's goals and behaviors perfectly align with human values."
+KBAI,"Knowledge-Based Artificial Intelligence relies heavily on symbolic representations and ontologies, contrasting with the data-driven statistical approaches of modern deep learning."
+ML,"Support Vector Machines (SVMs) utilize the 'kernel trick' to map input data into high-dimensional feature spaces, allowing them to solve complex, non-linear classification problems."
+Quantum Hardware,"Superconducting qubits must be kept at temperatures near absolute zero (about 15 millikelvins) using dilution refrigerators to prevent thermal noise from destroying quantum coherence."
+Economics,"The Nash Equilibrium, developed by John Nash, is a concept in game theory where no player can increase their payoff by changing their strategy while other players keep theirs unchanged."
+Literature,"Mary Shelley wrote 'Frankenstein' in 1818 when she was just 20 years old, arguably creating the first true science fiction novel."
+Languages,"Basque is a language isolate spoken in parts of Spain and France. It has no known linguistic relatives and is the oldest surviving language in Europe."
+Music Theory,"The Pythagorean comma is the tiny mathematical discrepancy between twelve just perfect fifths and seven octaves, showing that perfect acoustic harmony is mathematically impossible on a fixed-pitch instrument."
+Linguistics,"The Sapir-Whorf hypothesis proposes that the structure of a language determines or greatly influences the modes of thought and behavior characteristic of the culture in which it is spoken."
+Robotics,"The term 'robot' was coined by Czech writer Karel Čapek in his 1920 play 'R.U.R.' (Rossum's Universal Robots), derived from the Czech word 'robota' meaning forced labor."
+Algorithms,"Dijkstra's Algorithm, conceived by computer scientist Edsger W. Dijkstra in 1956, finds the shortest path between nodes in a graph and is fundamental to modern GPS routing."
+Software Development Process,"The 'Agile Manifesto' was written in 2001 by 17 software developers at a ski resort in Utah, shifting the industry away from heavy, documentation-driven waterfall processes."
+Programming Languages,"Grace Hopper developed the first compiler (A-0 System) in 1952, leading to the creation of COBOL, one of the first high-level programming languages."
+Reinforcement Learning,"In 2016, DeepMind's AlphaGo defeated world champion Lee Sedol at the complex board game Go using deep reinforcement learning, a milestone many thought was decades away."
+Deep Learning,"The backpropagation algorithm, popularized by Geoffrey Hinton, David Rumelhart, and Ronald Williams in 1986, is the foundational mathematical engine that allows artificial neural networks to 'learn'."
+NLP,"The Transformer architecture, introduced by Google researchers in the 2017 paper 'Attention Is All You Need', revolutionized natural language processing by enabling massive parallelization."
+Game AI,"The A* (A-star) search algorithm is one of the most widely used techniques in video game pathfinding because it combines the strengths of Dijkstra's algorithm and greedy best-first search."
+Cybersecurity,"The Stuxnet worm, discovered in 2010, was the first known cyberweapon to cause physical destruction, specifically targeting centrifuges in Iran's nuclear program."
+Operating Systems,"Linux, the core of most modern servers and Android phones, was created in 1991 by Linus Torvalds as a personal project because he wanted a free operating system similar to MINIX."
+Networking,"The TCP/IP protocol suite, developed by Vint Cerf and Bob Kahn in the 1970s, operates on packet switching rather than circuit switching, making the modern internet incredibly resilient."
+Compilers,"Lexical analysis, syntax analysis, and semantic analysis are the three critical front-end phases a compiler uses to translate human-readable source code into
