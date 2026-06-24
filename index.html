@@ -68,6 +68,23 @@
             min-height: 80px; /* Prevents button from jumping too much */
         }
 
+        /* Animation Class */
+        .animate-fact {
+            animation: slideUpFade 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
+        
+        @keyframes slideUpFade {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.98);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+
         /* Neon Button */
         button {
             background-color: transparent;
@@ -136,23 +153,25 @@
             const randomIndex = Math.floor(Math.random() * factsArray.length);
             const randomFact = factsArray[randomIndex];
             
-            // Adding a tiny fade-out/fade-in effect for extra polish
             const factEl = document.getElementById('fact');
             const categoryEl = document.getElementById('category');
             
-            factEl.style.opacity = 0;
-            categoryEl.style.opacity = 0;
+            // 1. Remove the animation class to reset it
+            factEl.classList.remove('animate-fact');
+            categoryEl.classList.remove('animate-fact');
             
-            setTimeout(() => {
-                categoryEl.innerText = randomFact.category;
-                factEl.innerText = randomFact.fact;
-                
-                factEl.style.transition = "opacity 0.5s ease";
-                categoryEl.style.transition = "opacity 0.5s ease";
-                factEl.style.opacity = 1;
-                categoryEl.style.opacity = 1;
-            }, 200); // 200ms delay to match the fade out
+            // 2. Force the browser to reflow (this restarts the animation)
+            void factEl.offsetWidth; 
+            
+            // 3. Update the text with the new fact
+            categoryEl.innerText = randomFact.category;
+            factEl.innerText = randomFact.fact;
+            
+            // 4. Re-add the animation class to trigger the visual effect
+            factEl.classList.add('animate-fact');
+            categoryEl.classList.add('animate-fact');
         }
+
 
         window.onload = loadFacts;
     </script>
